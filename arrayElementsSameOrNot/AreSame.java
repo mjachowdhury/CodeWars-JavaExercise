@@ -1,6 +1,9 @@
-package arrayElementsSameOrNot;
 
+
+package arrayElementsSameOrNot;
 import java.util.Arrays;
+
+ 
 
 /*
  * Given two arrays a and b write a function comp(a, b) (compSame(a, b) in Clojure) that checks whether the two arrays have 
@@ -32,6 +35,7 @@ a or b might be [] (all languages except R, Shell). a or b might be nil or null 
 If a or b are nil (or null or None), the problem doesn't make sense so return false.
 
 If a or b are empty the result is evident by itself.
+ 
  */
 public class AreSame {
 
@@ -39,8 +43,8 @@ public class AreSame {
 		
 		// This below function is working as well 
 		
-		/*//condition checking both arrays
-		 * 
+		//condition checking both arrays
+/*		 
 		if (a == null || b == null || a.length != b.length)
 			return false;
 		
@@ -62,7 +66,7 @@ public class AreSame {
 		}
 		return result;
 		
-		*/
+*/		
 		
 		//This below function will pass all the test 
 		
@@ -93,3 +97,36 @@ public class AreSame {
 		System.out.println(comp(arrayOne, arrayTwo));
 	}
 }
+
+
+
+//Another way to do 
+
+/*public class AreSame {
+	  
+	  public static boolean comp(int[] a, int[] b) {
+	    if (a == null || b == null || a.length != b.length) return false;
+	    
+	    final int l = a.length;
+	    if (a.length == 0) return true;
+	    
+	    for (int i = 0; i < l; i++) a[i] = a[i] * a[i];
+	    
+	    Arrays.sort(a);
+	    Arrays.sort(b);
+	    
+	    if (Arrays.equals(a, b)) return true;
+	    return false;
+	  }
+	  
+	  
+	  
+	  public static void main(String[] args) {
+			int arrayOne[] = { 121, 144, 19, 161, 19, 144, 19, 11 };
+			//Arrays.sort(arrayOne);
+			int arrayTwo[] = { 121, 14641, 20736, 361, 25921, 361, 20736, 361 };
+			//Arrays.sort(arrayTwo);
+
+			System.out.println(comp(arrayOne, arrayTwo));
+		}
+	}*/
