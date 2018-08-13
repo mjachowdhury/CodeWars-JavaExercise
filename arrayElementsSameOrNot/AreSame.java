@@ -36,7 +36,11 @@ If a or b are empty the result is evident by itself.
 public class AreSame {
 
 	public static boolean comp(int a[], int[] b) {
-		//condition checking both arrays
+		
+		// This below function is working as well 
+		
+		/*//condition checking both arrays
+		 * 
 		if (a == null || b == null || a.length != b.length)
 			return false;
 		
@@ -57,6 +61,27 @@ public class AreSame {
 			}
 		}
 		return result;
+		
+		*/
+		
+		//This below function will pass all the test 
+		
+		//here simply checking array whether its null and both array same or not
+		return a != null && b != null && a.length == b.length &&
+				//stream -- will returns a sequential IntStream with the specified array as its source.
+				//map -- will returns a stream consisting of the results of applying the given function to the elements of this stream. 
+				
+				//equals() method -- Returns true if the two specified arrays of ints are equal to one another. 
+				//Two arrays are considered equal if both arrays contain the same number of elements, and all corresponding pairs 
+				//of elements in the two arrays are equal. In other words, two arrays are equal if they contain the same elements 
+				//in the same order. Also, two array references are considered equal if both are null.
+				
+				// sorted() method -- Returns a stream consisting of the elements of this stream in sorted order. 
+				//toArray() method --Returns an array containing the elements of this stream. 
+				Arrays.equals(
+						Arrays.stream(a).map(i -> i * i).sorted().toArray(),
+						Arrays.stream(b).sorted().toArray()
+				);
 	}
 
 	public static void main(String[] args) {
