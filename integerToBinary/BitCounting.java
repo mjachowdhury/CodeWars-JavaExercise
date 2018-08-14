@@ -7,7 +7,12 @@ Example: The binary representation of 1234 is 10011010010, so the function shoul
  */
 public class BitCounting {
 
-	public static int countBits(int n){
+	/**
+	 * This function will return bits 
+	 * @param n
+	 * @return
+	 */
+	/*public static int countBits(int n){
 		int result = 0;
 		
 		while(n > 0){
@@ -16,9 +21,24 @@ public class BitCounting {
 		}
 		return result;
 	}
+	*/
+	
+	/**
+	 * This function will return integer value its bits
+	 * @param n
+	 * @return
+	 */
+	public static int countBits(int n){
+		 //return Integer.bitCount(n);
+		int result = Integer.bitCount(n);
+		return result;
+	}
+	
+	
+	//main function
 	public static void main(String[] args) {
 	 
-		int n = 5;
+		int n = 125;
 		System.out.println(countBits(n));
 	}
 
